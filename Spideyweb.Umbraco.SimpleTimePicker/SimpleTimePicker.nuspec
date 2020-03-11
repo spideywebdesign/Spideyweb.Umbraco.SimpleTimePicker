@@ -2,6 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
   <metadata>
     <id>Spideyweb.Umbraco.SimpleTimePicker</id>
+    <title>Umbraco Simple Time Picker</title>
     <version>1.0.0</version>
     <authors>Mark Johnson</authors>
     <owners>Spidey Web Design</owners>
@@ -11,8 +12,9 @@
     <releaseNotes><![CDATA[1.0.0 Initial release]]></releaseNotes>
     <copyright>Copyright 2020</copyright>
     <tags>umbraco, umbraco-cms, time picker</tags>
-    <dependencies>
-      </dependencies>
+    <dependencies></dependencies>
+    <license type="expression">MIT</license>
+    <repository type="git" url="https://github.com/spideywebdesign/Spideyweb.Umbraco.SimpleTimePicker.git"></repository>
   </metadata>
   <files>
     <file src="App_Plugins\Spideyweb.Umbraco.SimpleTimePicker\**\*.*" target="content\App_Plugins\Spideyweb.Umbraco.SimpleTimePicker" />

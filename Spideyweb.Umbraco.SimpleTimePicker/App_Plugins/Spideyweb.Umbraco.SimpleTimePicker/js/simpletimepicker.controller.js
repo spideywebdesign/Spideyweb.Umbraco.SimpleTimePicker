@@ -78,18 +78,6 @@
             $scope.model.value = null;
             $scope.datePickerForm.datepicker.$setValidity('pickerError', true);
         };
-        $scope.serverTime = null;
-        $scope.serverTimeNeedsOffsetting = false;
-        if (Umbraco.Sys.ServerVariables.application.serverTimeOffset !== undefined) {
-            // Will return something like 120
-            var serverOffset = Umbraco.Sys.ServerVariables.application.serverTimeOffset;
-            // Will return something like -120
-            var localOffset = new Date().getTimezoneOffset();
-            // If these aren't equal then offsetting is needed
-            // note the minus in front of serverOffset needed
-            // because C# and javascript return the inverse offset
-            $scope.serverTimeNeedsOffsetting = -serverOffset !== localOffset;
-        }
         //get the current user to see if we can localize this picker
         userService.getCurrentUser().then(function (user) {
             assetsService.loadCss('lib/datetimepicker/bootstrap-datetimepicker.min.css', $scope).then(function () {
