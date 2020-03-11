@@ -67,18 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\SimpleTimePicker\css\simpletimepicker.css" />
-    <Content Include="App_Plugins\SimpleTimePicker\js\simpletimepicker.controller.js" />
-    <Content Include="App_Plugins\SimpleTimePicker\views\editor.html" />
+    <Content Include="App_Plugins\Spideyweb.Umbraco.SimpleTimePicker\css\simpletimepicker.css" />
+    <Content Include="App_Plugins\Spideyweb.Umbraco.SimpleTimePicker\js\simpletimepicker.controller.js" />
+    <Content Include="App_Plugins\Spideyweb.Umbraco.SimpleTimePicker\views\editor.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Plugins\SimpleTimePicker\package.manifest" />
+    <Content Include="App_Plugins\Spideyweb.Umbraco.SimpleTimePicker\package.manifest" />
     <None Include="packages.config" />
     <Content Include="Readme.md" />
+    <Content Include="SimpleTimePicker.nuspec" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

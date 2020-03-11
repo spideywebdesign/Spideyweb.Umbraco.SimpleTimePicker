@@ -4,18 +4,18 @@
         {
             "name": "Simple Time Picker",
             "description": "A simple time picker for when dates are just not needed... Derived from the stock Umbraco DateTime picker",
-            "alias": "Spidey.SimpleTimePicker",
+            "alias": "Spideyweb.SimpleTimePicker",
             "isParameterEditor": true,
             "editor": {
-                "view": "~/App_Plugins/SimpleTimePicker/views/editor.html",
+                "view": "~/App_Plugins/Spideyweb.Umbraco.SimpleTimePicker/views/editor.html",
                 "valueType": "TEXT"
             }
         }
     ],
     "javascript": [
-        "~/App_Plugins/SimpleTimePicker/js/simpletimepicker.controller.js"
+        "~/App_Plugins/Spideyweb.Umbraco.SimpleTimePicker/js/simpletimepicker.controller.js"
     ],
     "css": [
-        "~/App_Plugins/SimpleTimePicker/css/simpletimepicker.css"
+        "~/App_Plugins/Spideyweb.Umbraco.SimpleTimePicker/css/simpletimepicker.css"
     ]
 }

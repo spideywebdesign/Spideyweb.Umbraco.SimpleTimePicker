@@ -1,6 +1,6 @@
 ﻿function timePickerController($scope, assetsService, angularHelper, userService, $element, dateHelper) {
-        //setup the default config
-    var config = {
+    //setup the default config
+    const config = {
         pickDate: false,
         pickTime: true,
         useSeconds: false,
@@ -22,9 +22,7 @@
         $scope.datetimePickerValue = null;
         //hide picker if clicking on the document
         $scope.hidePicker = function () {
-            //$element.find("div:first").datetimepicker("hide");
-            // Sometimes the statement above fails and generates errors in the browser console. The following statements fix that.
-            var dtp = $element.find('div:first');
+            const dtp = $element.find('div:first');
             if (dtp && dtp.datetimepicker) {
                 dtp.datetimepicker('hide');
             }
@@ -33,10 +31,10 @@
         //here we declare a special method which will be called whenever the value has changed from the server
         //this is instead of doing a watch on the model.value = faster
         $scope.model.onValueChanged = function (newVal, oldVal) {
-            if (newVal != oldVal) {
+            if (newVal !== oldVal) {
                 //check for c# System.DateTime.MinValue being passed as the clear indicator
-                var minDate = moment('0001-01-01');
-                var newDate = moment(newVal);
+                const minDate = moment('0001-01-01');
+                const newDate = moment(newVal);
                 if (newDate.isAfter(minDate)) {
                     applyDate({ date: moment(newVal) });
                 } else {
@@ -67,14 +65,13 @@
         // to the server, this is different from the format used to display the date/time.
         function setModelValue() {
             if ($scope.hasDatetimePickerValue) {
-                var elementData = $element.find('div:first').data().DateTimePicker;
+                const elementData = $element.find('div:first').data().DateTimePicker;
 
                 $scope.model.value = elementData.getDate().format('HH:mm');
             } else {
                 $scope.model.value = null;
             }
         }
-        var picker = null;
         $scope.clearDate = function () {
             $scope.hasDatetimePickerValue = false;
             $scope.datetimePickerValue = null;
@@ -96,20 +93,19 @@
         //get the current user to see if we can localize this picker
         userService.getCurrentUser().then(function (user) {
             assetsService.loadCss('lib/datetimepicker/bootstrap-datetimepicker.min.css', $scope).then(function () {
-                var filesToLoad = ['lib/datetimepicker/bootstrap-datetimepicker.js'];
+                const filesToLoad = ['lib/datetimepicker/bootstrap-datetimepicker.js'];
                 $scope.model.config.language = user.locale;
                 assetsService.load(filesToLoad, $scope).then(function () {
                     //The Datepicker js and css files are available and all components are ready to use.
                     // Get the id of the datepicker button that was clicked
-                    var pickerId = $scope.model.alias;
-                    var element = $element.find('div:first');
+                    const element = $element.find('div:first');
                     // Open the datepicker and add a changeDate eventlistener
                     element.datetimepicker(angular.extend({ useCurrent: $scope.model.config.defaultEmpty !== '1' }, $scope.model.config)).on('dp.change', applyDate).on('dp.error', function (a, b, c) {
                         $scope.hasDatetimePickerValue = false;
                         $scope.datePickerForm.datepicker.$setValidity('pickerError', false);
                     });
                     if ($scope.hasDatetimePickerValue) {
-                        var dateVal;
+                        let dateVal;
                         //check if we are supposed to offset the time
                         if ($scope.model.value && $scope.model.config.offsetTime === '1' && $scope.serverTimeNeedsOffsetting) {
                             //get the local time offset from the server
@@ -117,7 +113,7 @@
                             $scope.serverTime = dateHelper.convertToServerStringTime(dateVal, Umbraco.Sys.ServerVariables.application.serverTimeOffset, 'YYYY-MM-DD HH:mm:ss Z');
                         } else {
                             //create a normal moment , no offset required
-                            var dateVal = $scope.model.value ? moment($scope.model.value, 'HH:mm') : moment();
+                            dateVal = $scope.model.value ? moment($scope.model.value, 'HH:mm') : moment();
                         }
                         element.datetimepicker('setValue', dateVal);
                         $scope.datetimePickerValue = dateVal.format($scope.model.config.format);
@@ -150,4 +146,4 @@
             unsubscribe();
         });
     }
-angular.module('umbraco').controller('Spidey.SimpleTimePicker.Controller', timePickerController);
+angular.module('umbraco').controller('Spideyweb.Umbraco.SimpleTimePicker.Controller', timePickerController);

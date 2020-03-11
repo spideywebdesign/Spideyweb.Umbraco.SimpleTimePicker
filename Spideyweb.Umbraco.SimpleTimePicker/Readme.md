@@ -1,6 +1,6 @@
 ﻿# Simple Time Picker
 
-A (wait for it..) simple time picker derived from the Umbraco datepicker property editor.
+A (wait for it..) simple time picker for Umbraco 7, derived from the Umbraco datepicker property editor.
 
 ## How to use it
 
@@ -13,5 +13,5 @@ The editor will be restricted to using valid 24h (HH:mm) time format and propert
 The package is available via NuGet:
 
 ```
-Install-Package [Package Name TBC]
+Install-Package Spideyweb.Umbraco.SimpleTimePicker
 ```

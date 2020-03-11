@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/10/nuspec.xsd">
+  <metadata>
+    <id>Spideyweb.Umbraco.SimpleTimePicker</id>
+    <version>1.0.0</version>
+    <authors>Mark Johnson</authors>
+    <owners>Spidey Web Design</owners>
+    <projectUrl>https://github.com/spideywebdesign/Spideyweb.Umbraco.SimpleTimePicker</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This will add a new Simple Time Picker property editor to your Umbraco website</description>
+    <releaseNotes><![CDATA[1.0.0 Initial release]]></releaseNotes>
+    <copyright>Copyright 2020</copyright>
+    <tags>umbraco, umbraco-cms, time picker</tags>
+    <dependencies>
+      </dependencies>
+  </metadata>
+  <files>
+    <file src="App_Plugins\Spideyweb.Umbraco.SimpleTimePicker\**\*.*" target="content\App_Plugins\Spideyweb.Umbraco.SimpleTimePicker" />
+  </files>
+</package>
